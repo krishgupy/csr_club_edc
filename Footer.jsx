@@ -6,7 +6,7 @@ function Footer() {
   const footerText = "Made with ❤️ by CSR Web Team";
 
   return (
-    <footer className="bg-bg-color py-6 sm:py-8 text-center w-full relative">
+    <footer className="bg-bg-color py-6 sm:py-8 text-center w-full relative select-none">
       {/* Animated Footer Text */}
       <motion.div
         className="text-2xl sm:text-3xl md:text-4xl font-bold text-white px-4" // Added padding to prevent overlap
