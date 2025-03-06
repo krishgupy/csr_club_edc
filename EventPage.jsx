@@ -34,7 +34,7 @@ const events = [
     title: "Republic Day Event",
     description:
       "It was a heartfelt reminder of our shared freedom and the pride we carry in being part of this great country.",
-    date: "November 26, 2024",
+    date: "January 26, 2024",
   },
 ];
 
