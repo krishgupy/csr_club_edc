@@ -1,198 +1,103 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import EventPage from './EventPage';
-import ThreeImageSection from './About';
-import TeacherCard from './Teachers';
-import OfficeBearersCard from './Officebearers';
-import Footer from './Footer';
-import ClubTeams from './clubteams';
-import Navbar from './Navbar';
-import IntroPage from './intro';
-function App() {
-  const [count, setCount] = useState(0);
-  const officeBearersData = [
-    {
-      name:"Fahed Ahmed",
-      designation:"President",
-      photo:"fahed.png",
-      about:"Leader of compassion and change, our President, Fahed, stands strong and wise, with a heart for service and a vision to rise.",
-      linkedin:"https://www.linkedin.com/in/fahed-ahmad/",
-      instagram:"https://www.instagram.com/fahed_.14/",
-      whatsapp:"https://api.whatsapp.com/send/?phone=%2B919971937275&text&type=phone_number&app_absent=0",
-    },
-    {
-      name:"Kavleen Kaur",
-            designation:"Vice President",
-            photo:"kavleen.png",
-            about:"Champion of kindness, a beacon so bright, our Vice President, Kavleen, guides with insight, rooted in purpose, reaching for the light.",
-            linkedin:"https://www.linkedin.com/in/kavleen-kaur-b93305270/",
-            instagram:"https://www.instagram.com/kavleenspeaks/",
-            whatsapp:"https://api.whatsapp.com/send/?phone=%2B919671455028&text&type=phone_number&app_absent=0",
-    },
-    {
-      name:"Deekshant Tilwani",
-      designation:"Secretary",
-      photo:"deekshant.png",
-      about:"Keeper of order, with a steady hand, our Secretary, Deekshant, helps us understand, with clarity and purpose, they lead the way, ensuring our mission shines bright every day.",
-      linkedin:"https://www.linkedin.com/in/deekshant-tilwani/",
-      instagram:"https://www.instagram.com/deekshant_9/",
-      whatsapp:"https://api.whatsapp.com/send/?phone=%2B917014913931&text&type=phone_number&app_absent=0",
-    },
-    {
-      name:"Ankit",
-            designation:"Joint Secretary",
-            photo:"ankit.png",
-            about:"Bridge of collaboration, strong and sincere, our Joint Secretary, Ankit, brings ideas near, with a heart for teamwork and a vision so grand, they unite us all, hand in hand.",
-            linkedin:"https://www.linkedin.com/in/ankit-parihar-666543293/",
-            instagram:"https://www.instagram.com/ankitzthakur/",
-            whatsapp:"https://api.whatsapp.com/send/?phone=%2B917217756273&text&type=phone_number&app_absent=0",
-    },
-    {
-      name:"Bikash",
-            designation:"Treasurer",
-            photo:"bikash.png",
-            about:"Guardian of resources, steady and true, our Treasurer, Bikash, ensures every plan comes through, with wisdom in numbers and a vision so clear, they guide us forward, year after year.",
-            linkedin:"https://www.linkedin.com/in/bikash-kumar-040598229/",
-            instagram:"https://www.instagram.com/vikash_kr_th/",
-            whatsapp:"https://api.whatsapp.com/send/?phone=%2B919508644616&text&type=phone_number&app_absent=0",
-    },
-  ];
+import React from 'react';
+
+const ThreeImageSection = () => {
   return (
     <>
-      
-      <Navbar/>
-      
-      <section id='home'>
-      <IntroPage />
-      </section>
-      
-      <section id='about'>
-      <ThreeImageSection />
-      </section>
-      <section id='events'>
-      <EventPage />
-      </section>
-      <section id='mentors'>
-      <div className='text-4xl font-bold text-center mt-8 select-none text-white mb-8 font-poppins'>Our Faculty Mentors</div>
-
-      <div className="min-h-screen rounded-2xl select-none bg-custom-color flex items-center justify-center p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-poppins">
-          {/* Example usage of TeacherCard */}
-          <TeacherCard
-            name="Dr. Arti Singh"
-            photo="arti_mam2.png"
-            teachings={[
-              "Optimal trading",
-              "Portfolio Optimization",
-              "Financial Mathematics"
-            ]}
-            achievements={[
-              "Awarded NPDF-SERB (National Post-Doctoral Fellowship - Science and Engineering Research Board)",
-              "Received Prof. M. C. Puri Gold Medal for securing highest C.G.P.A. in M.Sc. Mathematics from Indian Institute of Technology Delhi.",
-              "Achieved CSIR (Council for Scientific and Industrial Research)-JRF (Junior Research Fellowship) with All India Rank 147",
-              "Achieved GATE (Graduate Aptitude Test for Engineering) fellowship in Mathematical Sciences, 2013 with All India Rank 5"
-            ]}
-          />
-          <TeacherCard
-            name="Dr. Ruchika Sehgal"
-            photo="ruchika_mam2.png"
-            teachings={["Foundation of Computer Science", "Convex Optimization", "Numerical Analysis"]}
-            achievements={[
-              "Received 'Excellent teaching feedback' in the course-Computed Oriented Numerical Methods with General Impression about Teacher at IIT(ISM) Dhanbad",
-              "Awarded with Research Excellence Travel Award (RETA) by IIT Delhi",
-              "All India GATE Mathematics Rank-14(2015)",
-              "All India JRF Rank- 73 (June, 2015)"
-            ]}
-          />
-          <TeacherCard
-            name="Dr. Deekshali Anand"
-            photo="deekshali_mam.png.jpeg"
-            teachings={["Architecture Design", "Human Factors in Design", "Contextual Research Methods"]}
-            achievements={[
-              "Exhibition of toilet projects in Bill and Melissa Gate’s Foundation held at Hotel Taj Palace",
-              "Design work published by S.P.A, Delhi in A+D magazine",
-              "Award for Toilet projects by 'Washrooms and Beyond 2013' at Trident, Mumbai.",
-              "Shortlisted for Grand Finale in TOYCATHON 2021"
-            ]}
-          />
-        </div>
+      {/* Section Title */}
+      <div className="font-poppins select-none font-bold text-3xl sm:text-4xl md:text-5xl flex justify-center my-6 text-white">
+        About Us
       </div>
-      </section>
 
-      {/* <div className='text-4xl text-white font-poppins font-bold text-center mt-8 mb-8'>Meet Our Office Bearers</div>
-      <div className="min-h-screen bg-bg-color flex items-center justify-center p-6 font-poppins">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-          {/* Example usage of OfficeBearersCard */}
-          {/* <OfficeBearersCard
-            name="Fahed Ahmed"
-            designation="President"
-            photo="fahed.png"
-            about="Leader of compassion and change, our President, Fahed, stands strong and wise, with a heart for service and a vision to rise."
-            linkedin="https://www.linkedin.com/in/fahed-ahmad/"
-            instagram="https://www.instagram.com/fahed_.14/"
-            whatsapp="https://api.whatsapp.com/send/?phone=%2B919971937275&text&type=phone_number&app_absent=0"
-          />
-          <OfficeBearersCard
-            name="Kavleen Kaur"
-            designation="Vice President"
-            photo="kavleen.png"
-            about="Champion of kindness, a beacon so bright, our Vice President, Kavleen, guides with insight, rooted in purpose, reaching for the light."
-            linkedin="https://www.linkedin.com/in/kavleen-kaur-b93305270/"
-            instagram="https://www.instagram.com/kavleenspeaks/"
-            whatsapp="https://api.whatsapp.com/send/?phone=%2B919671455028&text&type=phone_number&app_absent=0"
-          />
-          <OfficeBearersCard
-            name="Deekshant Tilwani"
-            designation="Secretary"
-            photo="deekshant.png"
-            about="Keeper of order, with a steady hand,
-our Secretary, Deekshant, helps us understand,
-with clarity and purpose, they lead the way,
-ensuring our mission shines bright every day."
-            linkedin="https://www.linkedin.com/in/deekshant-tilwani/"
-            instagram="https://www.instagram.com/deekshant_9/"
-            whatsapp="https://api.whatsapp.com/send/?phone=%2B917014913931&text&type=phone_number&app_absent=0"
-          />
-          <OfficeBearersCard
-            name="Ankit"
-            designation="Joint Secretary"
-            photo="ankit.png"
-            about="Bridge of collaboration, strong and sincere, our Joint Secretary, Ankit, brings ideas near, with a heart for teamwork and a vision so grand, they unite us all, hand in hand."
-            linkedin="https://www.linkedin.com/in/ankit-parihar-666543293/"
-            instagram="https://www.instagram.com/ankitzthakur/"
-            whatsapp="https://api.whatsapp.com/send/?phone=%2B917217756273&text&type=phone_number&app_absent=0"
-          />
-          <OfficeBearersCard
-            name="Bikash"
-            designation="Treasurer"
-            photo="bikash.png"
-            about="Guardian of resources, steady and true, our Treasurer, Bikash, ensures every plan comes through, with wisdom in numbers and a vision so clear, they guide us forward, year after year."
-            linkedin="https://www.linkedin.com/in/bikash-kumar-040598229/"
-            instagram="https://www.instagram.com/vikash_kr_th/"
-            whatsapp="https://api.whatsapp.com/send/?phone=%2B919508644616&text&type=phone_number&app_absent=0"
-          />
+      {/* Main Section */}
+      <section id="three-image-section" className="bg-custom-color mx-4 sm:mx-8 rounded-lg py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <h2 className="font-poppins text-3xl select-none sm:text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8 sm:mb-12">
+            Welcome to CSR Club EDC
+          </h2>
+
+          {/* Paragraph */}
+          <div className="flex justify-center">
+            <p className="font-poppins select-none font-bold text-base sm:text-lg text-gray-700 text-center max-w-3xl mb-8">
+              The Corporate Social Responsibility (CSR) Club comes under the umbrella of Srijan with the
+              objective of promoting citizenship values vital for sustainable development among the students
+              of the University. Students can take initiatives in teaching wards of housekeeping staff, guards
+              and other employees of the university enabling them in improving their academic performance
+              in critical subjects like Maths, English etc. Besides teaching, student volunteers can develop
+              and maintain a library, stationary material, and other teaching aids for their overall growth.
+            </p>
+          </div>
+
+          {/* Mission Card and Grid of Cards */}
+          <div className="flex flex-col lg:flex-row justify-center gap-8 sm:gap-12 lg:gap-20">
+            {/* Mission Card */}
+            <div className="bg-box-color p-6 sm:p-8 rounded-2xl shadow-lg w-full lg:w-1/3">
+              <h3 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800  select-none mb-6 underline underline-offset-2">Our Mission</h3>
+              <p className=" select-none font-poppins text-base sm:text-lg text-gray-600">
+                Our mission is to cultivate a sense of responsibility towards the environment
+                among our members and the larger community. We aim to collaborate with
+                environmental organizations, engage in research, and work on initiatives that
+                create a positive impact.
+                <br />
+                <br />
+                Join us as we embark on this journey to reconnect with nature, learn from it, and take meaningful steps toward building a greener, cleaner, and more sustainable future. Together, let's be the change the world needs!
+              </p>
+            </div>
+
+            {/* Grid for Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full lg:w-2/3">
+              {/* Card 1 */}
+              <div className="group relative h-[20rem] sm:h-[28rem] w-full transform transition-transform duration-500 hover:scale-105 rounded-2xl overflow-hidden">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/024/472/833/non_2x/green-earth-day-on-isolated-white-background-care-for-the-environment-and-ecology-resources-that-are-sustainable-renewable-and-green-graphic-resource-generative-ai-free-photo.jpg"
+                  alt="Mission Image 1"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 rounded-lg">
+                  <p className="font-poppins text-white select-none text-xl sm:text-2xl font-bold mb-4">Sustainability</p>
+                  <p className="font-poppins text-white select-none text-sm sm:text-lg text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    We are committed to promoting sustainable practices and reducing our
+                    environmental footprint.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="group relative h-[20rem] sm:h-[28rem] w-full transform transition-transform duration-500 hover:scale-105 rounded-2xl overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-photo/people-stacking-hands-together-park_53876-63293.jpg"
+                  alt="Mission Image 2"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 rounded-lg">
+                  <p className="font-poppins text-white select-none text-xl sm:text-2xl font-bold mb-4">Community</p>
+                  <p className="font-poppins text-white select-none text-sm sm:text-lg text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    We strive to build a strong community that works together for a better
+                    future.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="group relative h-[20rem] sm:h-[28rem] w-full transform transition-transform duration-500 hover:scale-105 rounded-2xl overflow-hidden">
+                <img
+                  src="https://t4.ftcdn.net/jpg/03/23/82/99/360_F_323829966_H32wLhoouiPinJ66KyggCvqQ2dFPuuQ1.jpg"
+                  alt="Mission Image 3"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 rounded-lg">
+                  <p className="font-poppins text-white text-xl select-none sm:text-2xl font-bold mb-4">Innovation</p>
+                  <p className="font-poppins text-white text-sm select-none sm:text-lg text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    We encourage innovative solutions to tackle environmental challenges.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div> */} 
-      <section id="team">
-
-      
-      <div className='text-4xl select-none text-white font-poppins font-bold text-center mt-8 mb-8'>Meet Our Office Bearers</div>
-    <div className="p-8 select-none bg-custom-color font-poppins rounded-2xl">
-    
-      <OfficeBearersCard officeBearers={officeBearersData} />
-
-    </div>
-    </section>
-      
-      <ClubTeams/>
-      <section id='contact'>
-      <Footer/>
       </section>
-
     </>
   );
-}
+};
 
-export default App;
+export default ThreeImageSection;
